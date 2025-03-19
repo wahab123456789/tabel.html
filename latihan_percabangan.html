@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onClick="alert('ini adalah Jendela Dialog alert jika tombol diklik')">Klik saya</button>
+    <script>
+        alert("selamat datang di kelas PPLG");
+
+        var yakin = confirm("silahkan mengisi biodata!");
+
+        if (yakin) {
+            document.write("<p></p>");
+        } else {
+            document.write("<p>aduh, sayang sekali</p>");
+        }
+
+        var nama = prompt("Siapa nama kamu?","");
+        var usia = prompt("Berapa usia kamu?","");
+        var alamat = prompt("Di mana alamat kamu?","");
+        document.write("<p>Halo, "+ nama +"</p>");
+        document.write("<p>Usia kamu adalah "+ usia +" tahun</p>");
+        document.write("<p>Saat ini kamu tinggal di "+ alamat +"</p>");
+    </script>
+</body>
+</html> 
