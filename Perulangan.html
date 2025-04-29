@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let jumlahForString = prompt("Masukkan jumlah perulangan untuk FOR");
+        if (jumlahForString !== null) {
+            let jumlahFor = parseInt(jumlahForString);
+            if (!isNaN(jumlahFor) && jumlahFor > 0) {
+            let hasilFor = "";
+            for (let i = 1; i <= jumlahFor; i++) {
+                hasilFor += `Iterasi ke-${i} (FOR)<br>`;
+            }
+            document.write(`<p>Hasil: ${hasilFor}</p><br>`);
+            } else {
+            document.write(`<p>Hasil: input tidak valdi atau bukan angka positif (FOR).</p><br>`);
+            } 
+        } else {
+            document.write(`<p>Hasil: Anda tidak memasukkan jumlah perulangan (FOR).</p><br>`);
+        }
+
+        let jumlahWhileString = prompt("Masukkan jumlah perulangan untuk WHILE:");
+        if (jumlahWhileString !== null) {
+            let jumlahWhile = parseInt(jumlahWhileString);
+            if (!isNaN(jumlahWhile) && jumlahWhile > 0) {
+            let hasilWhile = "";
+            let counterWhile = 1;
+            while (counterWhile <= jumlahWhile) {
+                hasilWhile += `Iterasi ke-${counterWhile} (while)<br>`;
+                counterWhile++;
+            }
+            document.write(`<p>Hasil: ${hasilWhile}</p><br>`);
+            } else {
+            document.write(`<p>Hasil: input tidak valdi atau bukan angka positif (WHILE).</p><br>`);
+            }
+        } else {
+            document.write(`<p>Hasil: Anda tidak memasukkan jumlah perulangan (WHILE).</p><br>`);
+        }
+
+        let jumlahDoWhileString = prompt("Masukkan jumlah perulangan untuk DO...WHILE:");
+        if (jumlahDoWhileString !== null) {
+            let jumlahDoWhile = parseInt(jumlahDoWhileString);
+            if (!isNaN(jumlahDoWhile) && jumlahDoWhile > 0) {
+            let hasilDoWhile = "";
+            let counterDoWhile = 1;
+            do {
+                hasilDoWhile += `Iterasi ke-${counterDoWhile} (DO...while)<br>`;
+                counterDoWhile++;
+            } while (counterDoWhile <= jumlahDoWhile);
+            document.write(`<p>Hasil: ${hasilDoWhile}</p><br>`);
+            } else {
+            document.write(`<p>Hasil: input tidak valdi atau bukan angka positif (D0...WHILE).</p><br>`);
+            }
+        } else {
+            document.write(`<p>Hasil: Anda tidak memasukkan jumlah perulangan (DO...WHILE).</p><br>`);
+        }
+    </script>
+</body>
+</html>
