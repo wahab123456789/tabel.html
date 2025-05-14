@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // *1. membuat objek awal pengguna*
+        const pengguna = {
+        nama: "pengguna anonim",
+        usia: null,
+        email: "",
+        kota:"tidak diketahui",
+
+        // *2. metode untuk menampilkan informasi pengguna*
+        tampilkanInfo: function() {
+            console.log("--- informasi pengguna ---");
+            console.log(`nama: ${this.nama}`);
+            console.log(`usia: ${this.usia === null ? 'belum diisi' : this.usia}`);
+            console.log(`email: ${this.email || 'belum di isi'}`);
+            console.log(`kota: ${this.kota}`);
+            console.log("------------------------");
+        },
+
+        // *3. metode untuk memperbarui nama pengguna*
+        perbaruiNama: function() {
+            const namaBaru = prompt("masukan nama baru anda:");
+            if (namaBaru !== null && namaBaru.trim() !== "") {
+            this.nama = namaBaru.trim();
+            console.log("nama berhasil diperbarui.");
+            this.tampilkanInfo();
+            } else {
+                consol.log("nama tidak diperbarui.");
+            }
+        },
+
+        //*4. metode untuk memperbarui usia pengguna*
+        perbaruiUsia: function() {
+            const usiaBaruStr = prompt("masukan usia anda:");
+            if (usiaBaruStr !== null && !isNaN(parseInt(usiaBaruStr))) {
+            this.usia = parseInt (usiaBaruStr);
+            console.log("usia berhasil diperbarui.");
+            this.tampilkanInfo();
+            } else {
+                console.log("usia tidak valid atau tidak diperbarui.")
+            }
+        },
+
+        //*5. metode untuk memperbarui email pengguna*
+        perbaruiEmail: function() {
+            const emailBaru = prompt("masukan alamat email anda:");
+            if (emailBaru !== null) {
+            this.email = emailBaru;
+            console.log("email berhasil diperbarui.");
+            this.tampilkanInfo();
+            } else {
+            console.log("email tidak diperbarui.");
+            }
+        },
+
+        //*6.metode untuk memperbaru kota pengguna*
+        perbaruiKota: function() {
+            const kotaBaru = prompt("masukkan kota tempat tinggal anda:");
+            if (kotaBaru !== null && kotaBaru.trim() !== "") {
+            this.kota = kotaBaru.trim();
+            console.log("kota berhasil diperbarui.");
+            this.tampilkanInfo();
+            } else {
+            console.log("kota tidak diperbarui.");
+            }
+        }
+        };
+
+        // *7. penggunaan awal objek*
+        pengguna.tampilkanInfo();
+
+        //*8. berinteraksi dengan pengguna menggunakaan prompt*
+        let pilihan;
+
+        do{
+            pilihan = prompt(
+                "pilih tindakan:\n" +
+                "1. perbarui nama\n" +
+                "2. perbarui usia\n" +
+                "3. perbarui email\n" +
+                "4. perbarui kota\n" +
+                "5. tampilkan informasi\n" +
+                "6. keluar"
+            );
+
+            switch (pilihan) {
+                case "1":
+                pengguna.perbaruiNama();
+                break;
+                case "2":
+                pengguna.perbaruiUsia();
+                break;
+                case "3": 
+                pengguna.perbaruiEmail();
+                break;
+                case "4": 
+                pengguna.perbaruiKota();
+                break;
+                case "5":
+                pengguna.tampilkanInfo();
+                case "6":
+                console.log("trimakasih");
+                break;
+                default:
+                if (pilihan !== null) {
+                    console.log("pilihan tidak valid. silakan coba lagi.");
+                }
+                break;
+         }
+        } while (pilihan !== "6");
+    </script>
+</body>
+</html>
